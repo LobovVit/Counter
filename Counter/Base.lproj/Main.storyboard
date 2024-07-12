@@ -20,7 +20,11 @@
                                 <rect key="frame" x="93" y="102" width="245" height="234"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
+<<<<<<< HEAD
                                 <color key="textColor" systemColor="systemOrangeColor"/>
+=======
+                                <nil key="textColor"/>
+>>>>>>> c3135d45e57c21eb2941557add588f19d1e12ed1
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M15-9G-qSF">
@@ -95,8 +99,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+<<<<<<< HEAD
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+=======
+>>>>>>> c3135d45e57c21eb2941557add588f19d1e12ed1
     </resources>
 </document>
