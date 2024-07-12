@@ -50,12 +50,12 @@ class ViewController: UIViewController {
         show()
     }
     
-    func show() {
+    private func show() {
         scoreLabel.text = String(score)
         historyTextView.text = historyText
     }
     
-    func logger(message: String) {
+    private func logger(message: String) {
         let date: Date = Date.now
         let DateFormatter = DateFormatter()
         DateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
