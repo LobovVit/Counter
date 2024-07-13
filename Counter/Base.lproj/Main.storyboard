@@ -21,11 +21,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M15-9G-qSF">
-                                <rect key="frame" x="20" y="407" width="196" height="71"/>
+                                <rect key="frame" x="20" y="407" width="176" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="minus.circle" catalog="system" title="decrement">
@@ -33,6 +32,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="decrementTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TXT-Tq-T9t"/>
+                                    <action selector="decrementTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="xMM-gP-psI"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sX5-RC-zTe">
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-Oe-6D4">
-                                <rect key="frame" x="20" y="59" width="196" height="71"/>
+                                <rect key="frame" x="20" y="59" width="138" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <state key="normal" title="Button"/>
@@ -53,16 +53,18 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="resetTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Gb-6S-wfn"/>
+                                    <action selector="resetTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="MIk-67-s5h"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDW-rJ-HUO">
-                                <rect key="frame" x="214" y="407" width="196" height="71"/>
+                                <rect key="frame" x="234" y="407" width="176" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="increment">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="IncrementTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Yow-dU-RfL"/>
                                     <action selector="incrementTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDs-GY-VPL"/>
                                 </connections>
                             </button>
@@ -97,7 +99,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
