@@ -59,8 +59,7 @@ class ViewController: UIViewController {
         let date: Date = Date.now
         let DateFormatter = DateFormatter()
         DateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
-        historyText = historyText + "\n" +
-        "\(DateFormatter.string(from: date)): \(message)"
+        historyText = "\(DateFormatter.string(from: date)): \(message)" + "\n" + historyText
     }
     
 }
