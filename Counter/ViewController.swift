@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         historyTextView.text = historyText
         scoreLabel.text = String(score)
-        buttonChange(btn: incrementButton,btnColor: UIColor.systemGreen, borderColor: UIColor.gray.cgColor)
+        buttonChange(btn: incrementButton,btnColor: UIColor.systemBlue, borderColor: UIColor.gray.cgColor)
         buttonChange(btn: decrementButton,btnColor: UIColor.systemRed, borderColor: UIColor.gray.cgColor)
-        buttonChange(btn: resetButton,btnColor: UIColor.systemBlue, borderColor: UIColor.gray.cgColor)
+        buttonChange(btn: resetButton,btnColor: UIColor.systemGreen , borderColor: UIColor.gray.cgColor)
     }
 
     private func buttonChange(btn: UIButton, btnColor: UIColor,  borderColor: CGColor) {
@@ -48,14 +48,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func incrementTouch(_ sender: Any) {
-        buttonChange(btn: incrementButton,btnColor: UIColor.systemGreen, borderColor: UIColor.gray.cgColor)
+        buttonChange(btn: incrementButton,btnColor: UIColor.systemBlue, borderColor: UIColor.gray.cgColor)
         score += 1
         logger(message: "значение изменено на \(score) (+1)")
         show()
     }
     
     @IBAction func resetTouch(_ sender: Any) {
-        buttonChange(btn: resetButton,btnColor: UIColor.systemBlue, borderColor: UIColor.gray.cgColor)
+        buttonChange(btn: resetButton,btnColor: UIColor.systemGreen , borderColor: UIColor.gray.cgColor)
         score = 0
         logger(message: "значение сброшено")
         show()
@@ -77,10 +77,10 @@ class ViewController: UIViewController {
         buttonChange(btn: decrementButton,btnColor: UIColor.gray, borderColor: UIColor.systemRed.cgColor)
     }
     @IBAction func IncrementTouchDown(_ sender: Any) {
-        buttonChange(btn: incrementButton,btnColor: UIColor.gray, borderColor: UIColor.systemGreen.cgColor)
+        buttonChange(btn: incrementButton,btnColor: UIColor.gray, borderColor: UIColor.systemBlue.cgColor)
     }
     @IBAction func resetTouchDown(_ sender: Any) {
-        buttonChange(btn: resetButton,btnColor: UIColor.gray, borderColor: UIColor.systemBlue.cgColor)
+        buttonChange(btn: resetButton,btnColor: UIColor.gray, borderColor: UIColor.systemGreen.cgColor)
     }
 }
 
