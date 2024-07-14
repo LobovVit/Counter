@@ -9,14 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var score: Int = 0
-    var historyText: String = "История изменений"
+    private var score: Int = 0
+    private var historyText: String = "История изменений"
     
-    @IBOutlet internal weak var resetButton: UIButton!
-    @IBOutlet internal weak var incrementButton: UIButton!
-    @IBOutlet internal weak var decrementButton: UIButton!
-    @IBOutlet internal weak var scoreLabel: UILabel!
-    @IBOutlet internal weak var historyTextView: UITextView!
+    @IBOutlet private weak var resetButton: UIButton!
+    @IBOutlet private weak var incrementButton: UIButton!
+    @IBOutlet private weak var decrementButton: UIButton!
+    @IBOutlet private weak var scoreLabel: UILabel!
+    @IBOutlet private weak var historyTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         historyTextView.text = historyText
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         buttonChange(btn: resetButton,btnColor: UIColor.systemGreen , borderColor: UIColor.gray.cgColor)
     }
 
-    internal func buttonChange(btn: UIButton, btnColor: UIColor,  borderColor: CGColor) {
+    private func buttonChange(btn: UIButton, btnColor: UIColor,  borderColor: CGColor) {
         btn.layer.cornerRadius = 15
         btn.layer.borderWidth = 3
         btn.layer.borderColor = borderColor
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction internal func decrementTouch(_ sender: Any) {
+    @IBAction private func decrementTouch(_ sender: Any) {
         buttonChange(btn: decrementButton,btnColor: UIColor.systemBlue , borderColor: UIColor.gray.cgColor)
         if score > 0 {
             score -= 1
@@ -46,39 +46,39 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction internal func incrementTouch(_ sender: Any) {
+    @IBAction private func incrementTouch(_ sender: Any) {
         buttonChange(btn: incrementButton,btnColor: UIColor.systemRed, borderColor: UIColor.gray.cgColor)
         score += 1
         logger(message: "значение изменено на \(score) (+1)")
         show()
     }
     
-    @IBAction internal func resetTouch(_ sender: Any) {
+    @IBAction private func resetTouch(_ sender: Any) {
         buttonChange(btn: resetButton,btnColor: UIColor.systemGreen , borderColor: UIColor.gray.cgColor)
         score = 0
         logger(message: "значение сброшено")
         show()
     }
     
-    internal func show() {
+    private func show() {
         scoreLabel.text = String(score)
         historyTextView.text = historyText
     }
     
-    internal func logger(message: String) {
+    private func logger(message: String) {
         let date: Date = Date.now
         let DateFormatter = DateFormatter()
         DateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
         historyText = "\(DateFormatter.string(from: date)): \(message)" + "\n" + historyText
     }
     
-    @IBAction internal func decrementTouchDown(_ sender: Any) {
+    @IBAction private func decrementTouchDown(_ sender: Any) {
         buttonChange(btn: decrementButton,btnColor: UIColor.gray, borderColor: UIColor.systemBlue.cgColor)
     }
-    @IBAction internal func IncrementTouchDown(_ sender: Any) {
+    @IBAction private func IncrementTouchDown(_ sender: Any) {
         buttonChange(btn: incrementButton,btnColor: UIColor.gray, borderColor: UIColor.systemRed.cgColor)
     }
-    @IBAction internal func resetTouchDown(_ sender: Any) {
+    @IBAction private func resetTouchDown(_ sender: Any) {
         buttonChange(btn: resetButton,btnColor: UIColor.gray, borderColor: UIColor.systemGreen.cgColor)
     }
 }
