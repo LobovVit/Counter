@@ -12,11 +12,11 @@ class ViewController: UIViewController {
     var score: Int = 0
     var historyText: String = "История изменений"
     
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var incrementButton: UIButton!
-    @IBOutlet weak var decrementButton: UIButton!
-    @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var historyTextView: UITextView!
+    @IBOutlet internal weak var resetButton: UIButton!
+    @IBOutlet internal weak var incrementButton: UIButton!
+    @IBOutlet internal weak var decrementButton: UIButton!
+    @IBOutlet internal weak var scoreLabel: UILabel!
+    @IBOutlet internal weak var historyTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         historyTextView.text = historyText
