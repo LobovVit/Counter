@@ -7,23 +7,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerMain: UIViewController {
 
     private var score: Int = 0
-    private var historyText: String = "История изменений"
+    private var historyText: String = ""
     
+    @IBOutlet private weak var welcomeLabel: UILabel!
+    @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var resetButton: UIButton!
     @IBOutlet private weak var incrementButton: UIButton!
     @IBOutlet private weak var decrementButton: UIButton!
-    @IBOutlet private weak var scoreLabel: UILabel!
     @IBOutlet private weak var historyTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        historyText = getHistory()
         historyTextView.text = historyText
         scoreLabel.text = String(score)
         buttonChange(btn: incrementButton,btnColor: UIColor.systemRed, borderColor: UIColor.gray.cgColor)
         buttonChange(btn: decrementButton,btnColor: UIColor.systemBlue , borderColor: UIColor.gray.cgColor)
         buttonChange(btn: resetButton,btnColor: UIColor.systemGreen , borderColor: UIColor.gray.cgColor)
+        welcomeLabel.text = getWelcome()
+    }
+    
+    private func getWelcome() -> String {
+        guard let userName = UserDefaults.standard.string(forKey: "login") else {return "good luck"}
+        return "good luck \(userName)"
+    }
+    
+    private func getHistory() -> String {
+        guard let history = UserDefaults.standard.string(forKey: "history") else {return "История изменений"}
+        return "История изменений \n" + "\(history)"
     }
 
     private func buttonChange(btn: UIButton, btnColor: UIColor,  borderColor: CGColor) {
@@ -70,6 +83,7 @@ class ViewController: UIViewController {
         let DateFormatter = DateFormatter()
         DateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
         historyText = "\(DateFormatter.string(from: date)): \(message)" + "\n" + historyText
+        UserDefaults.standard.set(historyText, forKey: "history")
     }
     
     @IBAction private func decrementTouchDown(_ sender: Any) {
